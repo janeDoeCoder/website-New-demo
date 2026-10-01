@@ -45,7 +45,7 @@ export function PlatformOverview() {
   ];
 
   return (
-    <section id="platform" className="py-20 sm:py-28 bg-[#061321] relative">
+    <section id="platform" className="py-20 sm:py-28 bg-[#020408] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="PLATFORM INTELLIGENCE"
@@ -69,7 +69,7 @@ export function PlatformOverview() {
 
           {/* Right: Key Value Attributes */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-6 rounded-xl bg-[#0A1D2E] border border-white/[0.08]">
+            <div className="p-6 rounded-xl bg-[#040812] border border-white/[0.08]">
               <h3 className="text-lg font-bold text-[#F5F8FC] mb-2">
                 Engineered for Electrical Credibility
               </h3>
@@ -78,7 +78,7 @@ export function PlatformOverview() {
               </p>
             </div>
 
-            <div className="p-6 rounded-xl bg-[#0A1D2E] border border-white/[0.08]">
+            <div className="p-6 rounded-xl bg-[#040812] border border-white/[0.08]">
               <h3 className="text-lg font-bold text-[#F5F8FC] mb-2">
                 Autonomous Local Safeguards
               </h3>
@@ -94,9 +94,9 @@ export function PlatformOverview() {
           {capabilities.map((cap) => (
             <div
               key={cap.title}
-              className="p-6 rounded-xl bg-[#0A1D2E]/70 border border-white/[0.08] hover:border-[#00C8FF]/30 transition-all duration-200"
+              className="p-6 rounded-xl bg-[#040812] border border-white/[0.08] hover:border-[#00C8FF]/30 hover:bg-[#060D1A] transition-all duration-200"
             >
-              <div className="w-10 h-10 rounded-lg bg-[#061321] border border-white/10 flex items-center justify-center mb-4">
+              <div className="w-10 h-10 rounded-lg bg-[#020408] border border-white/10 flex items-center justify-center mb-4">
                 {cap.icon}
               </div>
               <h4 className="text-base font-semibold text-[#F5F8FC] mb-2">{cap.title}</h4>

@@ -10,20 +10,20 @@ import { BorderBeam } from "@/ui/BorderBeam";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-8 pb-16 sm:pt-14 sm:pb-24 lg:pt-20 lg:pb-32 bg-[#050B14]">
+    <section className="relative overflow-hidden pt-8 pb-16 sm:pt-14 sm:pb-24 lg:pt-20 lg:pb-32 bg-[#020408]">
       {/* Interactive WebGL-style Canvas Wave Shader (animmasterlib style) */}
       <ElectricalShaderBackground />
 
       {/* Atmospheric radial ambient light */}
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-gradient-to-b from-[#0052FF]/20 via-[#00D2FF]/10 to-transparent blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/2 -right-40 w-[500px] h-[500px] bg-[#A6FF00]/06 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-gradient-to-b from-[#0052FF]/12 via-[#00D2FF]/06 to-transparent blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 -right-40 w-[500px] h-[500px] bg-[#A6FF00]/04 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Messaging & CTAs */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">
             {/* Eyebrow with Official Brand Mark */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#081320]/90 border border-[#00D2FF]/30 text-xs font-mono font-semibold tracking-wider mb-6 shadow-[0_0_20px_-3px_rgba(0,210,255,0.25)]">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#040810]/95 border border-[#00D2FF]/30 text-xs font-mono font-semibold tracking-wider mb-6 shadow-[0_0_20px_-3px_rgba(0,210,255,0.25)]">
               <div className="w-4 h-4 relative">
                 <Image
                   src="/brand/vannic-mark.png"

@@ -165,9 +165,9 @@ export function ElectricalShaderBackground() {
         mouseY,
         320
       );
-      radialGlow.addColorStop(0, "rgba(0, 210, 255, 0.08)");
-      radialGlow.addColorStop(0.5, "rgba(0, 82, 255, 0.04)");
-      radialGlow.addColorStop(1, "rgba(5, 11, 20, 0)");
+      radialGlow.addColorStop(0, "rgba(0, 210, 255, 0.06)");
+      radialGlow.addColorStop(0.5, "rgba(0, 82, 255, 0.03)");
+      radialGlow.addColorStop(1, "rgba(2, 4, 8, 0)");
 
       ctx.fillStyle = radialGlow;
       ctx.fillRect(0, 0, width, height);

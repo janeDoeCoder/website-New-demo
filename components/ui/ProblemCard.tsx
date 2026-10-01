@@ -24,7 +24,7 @@ export function ProblemCard({
   return (
     <div
       className={cn(
-        "flex flex-col p-6 rounded-[14px] bg-[#0A1D2E]/90 border border-white/[0.08] hover:border-white/[0.18] transition-all duration-300",
+        "flex flex-col p-6 rounded-[14px] bg-[#040812] border border-white/[0.08] hover:border-[#00D2FF]/30 hover:bg-[#060D1A] transition-all duration-300",
         className
       )}
     >

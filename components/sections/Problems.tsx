@@ -5,7 +5,7 @@ import { ELECTRICAL_PROBLEMS } from "@/content/problems";
 
 export function Problems() {
   return (
-    <section id="problems" className="py-20 sm:py-28 bg-[#040C15] border-t border-white/[0.06] relative">
+    <section id="problems" className="py-20 sm:py-28 bg-[#020408] border-t border-white/[0.06] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="OPERATIONAL VULNERABILITIES"

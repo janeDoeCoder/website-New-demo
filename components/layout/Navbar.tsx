@@ -29,8 +29,8 @@ export function Navbar() {
         className={cn(
           "max-w-7xl mx-auto rounded-2xl transition-all duration-300 px-4 sm:px-6 py-2.5 sm:py-3",
           scrolled
-            ? "bg-[#050B14]/85 backdrop-blur-xl border border-white/[0.12] shadow-[0_8px_32px_rgba(0,0,0,0.6)]"
-            : "bg-[#081320]/60 backdrop-blur-md border border-white/[0.08]"
+            ? "bg-[#020408]/90 backdrop-blur-xl border border-white/[0.12] shadow-[0_8px_32px_rgba(0,0,0,0.8)]"
+            : "bg-[#040810]/75 backdrop-blur-md border border-white/[0.08]"
         )}
       >
         <div className="flex items-center justify-between">
@@ -53,11 +53,10 @@ export function Navbar() {
 
             {/* Typography matching official brand */}
             <div className="flex flex-col">
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center">
                 <span className="text-lg sm:text-xl font-black tracking-[0.14em] text-[#F5F8FC] leading-none group-hover:text-white transition-colors">
                   VANNIC
                 </span>
-                <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-[#A6FF00] animate-pulse" />
               </div>
               <span className="text-[9px] font-mono font-bold tracking-[0.3em] uppercase leading-tight mt-0.5 text-gradient-brand">
                 DYNAVION
@@ -66,7 +65,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation - Skiper UI Pill Capsule */}
-          <nav className="hidden md:flex items-center gap-1 bg-[#050B14]/70 border border-white/[0.08] rounded-full px-3 py-1.5 shadow-inner">
+          <nav className="hidden md:flex items-center gap-1 bg-[#020408]/85 border border-white/[0.08] rounded-full px-3 py-1.5 shadow-inner">
             {MAIN_NAVIGATION.map((item) => {
               const isActive = pathname === item.href;
               return (

@@ -78,7 +78,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-scroll-behavior="smooth" className={cn("dark", "h-full", "antialiased", inter.variable, "font-sans", geist.variable)}>
-      <body className="min-h-full flex flex-col bg-[#061321] text-[#F5F8FC] font-sans selection:bg-[#1677FF]/30 selection:text-[#00C8FF]">
+      <body className="min-h-full flex flex-col bg-[#020408] text-[#F5F8FC] font-sans selection:bg-[#1677FF]/30 selection:text-[#00C8FF]">
         <Navbar />
         <main className="flex-1 w-full">{children}</main>
         <Footer />
