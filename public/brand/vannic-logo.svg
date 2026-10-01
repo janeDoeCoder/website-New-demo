@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="none" width="200" height="44">
+  <defs>
+    <linearGradient id="logoVGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00C8FF" />
+      <stop offset="100%" stop-color="#1677FF" />
+    </linearGradient>
+    <linearGradient id="logoVGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1677FF" />
+      <stop offset="100%" stop-color="#0B3C8A" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon Mark -->
+  <g transform="translate(4, 4)">
+    <rect width="36" height="36" rx="8" fill="#0A1D2E" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <path d="M7 10L18 28L15 28L4 10H7Z" fill="url(#logoVGrad1)"/>
+    <path d="M29 10L18 28L21 28L32 10H29Z" fill="url(#logoVGrad2)"/>
+    <circle cx="18" cy="18" r="3" fill="#00C8FF"/>
+    <circle cx="18" cy="18" r="1.2" fill="#FFFFFF"/>
+    <path d="M12 18H24" stroke="#00C8FF" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="1 2"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="50" y="26" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" font-weight="800" fill="#F5F8FC" letter-spacing="0.08em">VANNIC</text>
+  <text x="50" y="37" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="7.5" font-weight="600" fill="#9EADC0" letter-spacing="0.28em">DYNAVION</text>
+</svg>

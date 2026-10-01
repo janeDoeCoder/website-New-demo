@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none" width="36" height="36">
+  <defs>
+    <linearGradient id="vGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00C8FF" />
+      <stop offset="100%" stop-color="#1677FF" />
+    </linearGradient>
+    <linearGradient id="vGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1677FF" />
+      <stop offset="100%" stop-color="#0B3C8A" />
+    </linearGradient>
+  </defs>
+  <!-- Background Badge -->
+  <rect width="36" height="36" rx="8" fill="#0A1D2E" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <!-- Left Wing of V (Phase R/Y vector) -->
+  <path d="M7 10L18 28L15 28L4 10H7Z" fill="url(#vGrad1)"/>
+  <!-- Right Wing of V (Phase B vector) -->
+  <path d="M29 10L18 28L21 28L32 10H29Z" fill="url(#vGrad2)"/>
+  <!-- Central Edge Node / Core Pulse -->
+  <circle cx="18" cy="18" r="3.5" fill="#00C8FF"/>
+  <circle cx="18" cy="18" r="1.5" fill="#FFFFFF"/>
+  <!-- Connecting Horizontal Bridge line -->
+  <path d="M12 18H24" stroke="#00C8FF" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="1 2"/>
+</svg>

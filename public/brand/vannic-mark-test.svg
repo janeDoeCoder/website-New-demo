@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" fill="none" width="100%" height="100%">
+  <defs>
+    <!-- Wave 1: Bottom Wave (Deep Blue to Vivid Cyan) -->
+    <linearGradient id="vannicWave1" x1="0%" y1="100%" x2="80%" y2="0%">
+      <stop offset="0%" stop-color="#0038FF" />
+      <stop offset="35%" stop-color="#0055FF" />
+      <stop offset="70%" stop-color="#0099FF" />
+      <stop offset="100%" stop-color="#00D2FF" />
+    </linearGradient>
+
+    <!-- Wave 2: Middle Wave (Blue to Cyan to Vibrant Emerald to Lime) -->
+    <linearGradient id="vannicWave2" x1="0%" y1="100%" x2="85%" y2="0%">
+      <stop offset="0%" stop-color="#0055FF" />
+      <stop offset="30%" stop-color="#0099FF" />
+      <stop offset="60%" stop-color="#00D4FF" />
+      <stop offset="85%" stop-color="#00E585" />
+      <stop offset="100%" stop-color="#55FF00" />
+    </linearGradient>
+
+    <!-- Wave 3: Top Wave (Electric Cyan to Vivid Lime Green) -->
+    <linearGradient id="vannicWave3" x1="0%" y1="100%" x2="90%" y2="0%">
+      <stop offset="0%" stop-color="#00B8FF" />
+      <stop offset="30%" stop-color="#00E5D0" />
+      <stop offset="65%" stop-color="#26E650" />
+      <stop offset="100%" stop-color="#A6FF00" />
+    </linearGradient>
+
+    <!-- Subtle Glow Filter -->
+    <filter id="waveGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <g transform="translate(15, 10)">
+    <!-- Bottom Wave 1 -->
+    <path
+      d="M20,118 
+         C38,118 52,118 64,118 
+         C78,118 89,110 97,98 
+         L120,62 
+         C128,50 138,44 153,44 
+         C164,44 175,46 186,49 
+         C168,58 153,74 143,92 
+         L124,124 
+         C115,138 102,146 84,146 
+         L20,146 
+         Z"
+      fill="url(#vannicWave1)"
+    />
+
+    <!-- Middle Wave 2 -->
+    <path
+      d="M50,92 
+         C68,92 82,92 94,92 
+         C108,92 119,84 127,72 
+         L150,36 
+         C158,24 168,18 183,18 
+         C194,18 205,20 216,23 
+         C198,32 183,48 173,66 
+         L154,98 
+         C145,112 132,120 114,120 
+         L50,120 
+         Z"
+      fill="url(#vannicWave2)"
+    />
+
+    <!-- Top Wave 3 -->
+    <path
+      d="M80,66 
+         C98,66 112,66 124,66 
+         C138,66 149,58 157,46 
+         L180,10 
+         C188,-2 198,-8 213,-8 
+         C224,-8 235,-6 246,-3 
+         C228,6 213,22 203,40 
+         L184,72 
+         C175,86 162,94 144,94 
+         L80,94 
+         Z"
+      fill="url(#vannicWave3)"
+    />
+  </g>
+</svg>

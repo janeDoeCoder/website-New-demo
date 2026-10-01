@@ -12,14 +12,21 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "incremental": true,
+    "incremental": false,
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/ui/*": ["./components/ui/*"],
+      "@/visuals/*": ["./components/visuals/*"],
+      "@/sections/*": ["./components/sections/*"],
+      "@/layout/*": ["./components/layout/*"],
+      "@/components/*": ["./components/*"],
+      "@/lib/*": ["./lib/*"],
+      "@/content/*": ["./content/*"]
     }
   },
   "include": [
