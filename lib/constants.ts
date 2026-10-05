@@ -15,6 +15,7 @@ export const BRAND = {
     targetAudienceNote: "Designed for commercial and industrial electrical infrastructure.",
     primaryCta: "Request a Demo",
     secondaryCta: "Explore the Platform",
+    edgeSeriesLabel: "Series-1 Active",
   },
   mission:
     "VANNIC DYNAVION PRIVATE LIMITED aims to make commercial and industrial electrical infrastructure more intelligent, reliable, and efficient by moving facilities from reactive monitoring toward preventive, data-driven energy management.",

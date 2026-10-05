@@ -30,7 +30,7 @@ export function PreventiveControl() {
       color: "border-[#F59E0B]/40 bg-[#F59E0B]/10 text-[#F59E0B]",
       examples: "Auxiliary ventilation blowers, secondary water heaters, decorative façade lighting, non-essential laundry banks.",
       statusText: "Shed automatically before sanctioned demand or thermal limits trigger main breaker trips",
-      action: "Shed in < 30ms via deterministic dry contact to keep total feeder under capacity limits.",
+      action: "Shed in {'<'} 30ms via deterministic dry contact to keep total feeder under capacity limits.",
     },
   ];
 
@@ -97,10 +97,10 @@ export function PreventiveControl() {
                   <span>STEP 03 • EDGE INTERLOCK</span>
                 </div>
                 <div className="text-sm font-bold text-[#00D2FF] mb-1">Tier-3 Shed Executed</div>
-                <p className="text-xs text-[#9EADC0]">Edge controller triggers dry-contact interlock, shedding approved non-critical heaters in &lt; 28ms.</p>
+                <p className="text-xs text-[#9EADC0]">Edge controller triggers dry-contact interlock, shedding approved non-critical heaters in {'<'} 28ms.</p>
               </div>
               <div className="mt-3 pt-2 border-t border-white/[0.06] text-[11px] font-mono text-[#00D2FF]">
-                Deterministic Response: &lt; 28ms
+                Deterministic Response: {'<'} 28ms
               </div>
             </div>
 

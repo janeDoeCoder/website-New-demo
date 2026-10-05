@@ -4,7 +4,6 @@ import { ArrowRight, ChevronRight, ShieldCheck, Cpu, Zap, Activity } from "lucid
 import { BRAND } from "@/lib/constants";
 import { Button } from "@/ui/Button";
 import { GridMindPanel } from "@/visuals/GridMindPanel";
-import { EdgeControllerVisual } from "@/visuals/EdgeControllerVisual";
 import { ElectricalShaderBackground } from "@/visuals/ElectricalShaderBackground";
 import { BorderBeam } from "@/ui/BorderBeam";
 
@@ -36,7 +35,7 @@ export function Hero() {
               <span className="text-[#00D2FF]">{BRAND.hero.eyebrow}</span>
               <span className="w-1.5 h-1.5 rounded-full bg-[#A6FF00] animate-pulse" />
               <span className="text-[10px] text-[#9EADC0] border-l border-white/20 pl-2 uppercase">
-                Series-1 Active
+                {BRAND.hero.edgeSeriesLabel}
               </span>
             </div>
 
@@ -113,42 +112,52 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Physical to Software Architecture Stack with Vengence UI BorderBeam */}
+          {/* Right Column: Primary Visual — GRiDMiND Console */}
           <div className="lg:col-span-6 flex flex-col gap-4 relative">
             {/* Visual Header Note */}
             <div className="flex items-center justify-between px-2 text-xs font-mono text-[#9EADC0]">
               <span className="flex items-center gap-2">
                 <Activity className="w-3.5 h-3.5 text-[#A6FF00] animate-pulse" />
-                <span className="text-[#F5F8FC] font-semibold">ELECTRICAL ARCHITECTURE HUD</span>
+                <span className="text-[#F5F8FC] font-semibold">GRIDMIND SUPERVISORY CONSOLE</span>
               </span>
               <span className="text-[11px] font-semibold text-gradient-brand">
                 HARDWARE ⇄ CLOUD
               </span>
             </div>
 
-            {/* Edge Controller Visual Container with BorderBeam */}
-            <div className="relative rounded-2xl p-0.5 overflow-hidden">
-              <BorderBeam
-                size={100}
-                duration={4}
-                colorFrom="#00D2FF"
-                colorTo="#A6FF00"
-                borderWidth={1.5}
-              />
-              <EdgeControllerVisual className="w-full" />
-            </div>
-
-            {/* GRiDMiND Console Visual Container with BorderBeam */}
+            {/* GRiDMiND Console — Primary Visual with BorderBeam */}
             <div className="relative rounded-2xl p-0.5 overflow-hidden">
               <BorderBeam
                 size={120}
-                duration={6}
-                delay={2}
+                duration={5}
                 colorFrom="#0052FF"
                 colorTo="#00D2FF"
                 borderWidth={1.5}
               />
               <GridMindPanel className="w-full" />
+            </div>
+
+            {/* Edge Controller — Compact Status Strip */}
+            <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#040C15] border border-white/[0.08]">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#9EADC0] shrink-0">
+                <Cpu className="w-3.5 h-3.5 text-[#A6FF00]" />
+                <span className="text-[#F5F8FC] font-semibold">EDGE CONTROLLER</span>
+              </div>
+              <div className="w-px h-4 bg-white/10 shrink-0" />
+              <div className="flex items-center gap-4 text-[11px] font-mono text-[#9EADC0] overflow-x-auto">
+                <span className="flex items-center gap-1.5 shrink-0">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
+                  DIN-Rail Mounted
+                </span>
+                <span className="flex items-center gap-1.5 shrink-0">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00D2FF]" />
+                  Sub-Cycle Sampling
+                </span>
+                <span className="flex items-center gap-1.5 shrink-0">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#A6FF00]" />
+                  Offline Autonomous
+                </span>
+              </div>
             </div>
           </div>
         </div>

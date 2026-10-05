@@ -60,16 +60,48 @@ export function ContactForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [serverError, setServerError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setServerError(null);
 
     if (!validate()) {
       return;
     }
 
-    // Client-side confirmation state
-    // In accordance with DOC/Architecture.md: "Until a backend exists, do not pretend messages are being sent"
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        if (result.error?.details && Array.isArray(result.error.details)) {
+          const fieldErrors: FormErrors = {};
+          for (const err of result.error.details) {
+            if (err.field && err.message) {
+              (fieldErrors as Record<string, string>)[err.field] = err.message;
+            }
+          }
+          setErrors(fieldErrors);
+        }
+        setServerError(result.error?.message || "Unable to submit inquiry. Please try again later.");
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setServerError("Network error: Please verify your connection or reach out via email.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -236,12 +268,21 @@ export function ContactForm() {
         )}
       </div>
 
+      {/* Server Error Alert */}
+      {serverError && (
+        <div className="p-4 rounded-lg bg-[#EF4444]/10 border border-[#EF4444]/30 text-xs text-[#EF4444] flex items-center gap-2">
+          <AlertCircle className="w-4 h-4 shrink-0" />
+          <span>{serverError}</span>
+        </div>
+      )}
+
       {/* Submit Button */}
       <button
         type="submit"
-        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-[10px] bg-[#1677FF] hover:bg-[#2982FF] text-white font-semibold text-sm shadow-[0_2px_14px_rgba(22,119,255,0.4)] hover:shadow-[0_4px_22px_rgba(22,119,255,0.6)] active:translate-y-[1px] transition-all cursor-pointer"
+        disabled={isSubmitting}
+        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-[10px] bg-[#1677FF] hover:bg-[#2982FF] text-white font-semibold text-sm shadow-[0_2px_14px_rgba(22,119,255,0.4)] hover:shadow-[0_4px_22px_rgba(22,119,255,0.6)] active:translate-y-[1px] transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        <span>Submit Request</span>
+        <span>{isSubmitting ? "Submitting..." : "Submit Request"}</span>
         <ArrowRight className="w-4 h-4" />
       </button>
     </form>

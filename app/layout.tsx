@@ -1,12 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Geist } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { ModernFooter } from "@/components/layout/ModernFooter";
 import { BRAND } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -58,7 +56,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/brand/vannic-logo.svg",
+        url: "/brand/og-cover.png",
         width: 1200,
         height: 630,
         alt: `${BRAND.brandName} - ${BRAND.tagline}`,
@@ -77,11 +75,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={cn("dark", "h-full", "antialiased", inter.variable, "font-sans", geist.variable)}>
+    <html lang="en" data-scroll-behavior="smooth" className={cn("dark", "h-full", "antialiased", inter.variable, "font-sans")}>
       <body className="min-h-full flex flex-col bg-[#020408] text-[#F5F8FC] font-sans selection:bg-[#1677FF]/30 selection:text-[#00C8FF]">
         <Navbar />
         <main className="flex-1 w-full">{children}</main>
-        <Footer />
+        <ModernFooter />
       </body>
     </html>
   );
