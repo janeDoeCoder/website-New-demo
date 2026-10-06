@@ -5,9 +5,10 @@ import { cn } from "@/lib/utils";
 
 export interface GridMindPanelProps {
   className?: string;
+  variant?: "hero" | "full";
 }
 
-export function GridMindPanel({ className }: GridMindPanelProps) {
+export function GridMindPanel({ className, variant = "full" }: GridMindPanelProps) {
   return (
     <div
       className={cn(
@@ -44,10 +45,26 @@ export function GridMindPanel({ className }: GridMindPanelProps) {
         </div>
       </div>
 
+      {/* Concise Mobile Preview (Hero Only) */}
+      {variant === "hero" && (
+        <div className="sm:hidden flex items-center justify-between p-3 rounded-lg bg-[#050B14] border border-[#00D2FF]/30 my-4">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#00D2FF]" />
+            <span className="text-xs font-bold text-[#F5F8FC]">3-Phase System Balanced</span>
+          </div>
+          <span className="text-[11px] font-mono text-[#A6FF00]">415V Nominal</span>
+        </div>
+      )}
+
       {/* 3-Phase Electrical Parameter Bank with Phase Colors */}
-      <div className="grid grid-cols-3 gap-2 sm:gap-3 my-4">
+      <div className={cn(
+        "my-4 gap-2 sm:gap-3",
+        variant === "hero" 
+          ? "hidden sm:grid sm:grid-cols-3" 
+          : "flex overflow-x-auto snap-x snap-mandatory pb-2 sm:pb-0 sm:grid sm:grid-cols-3 hide-scrollbar"
+      )}>
         {/* Phase R */}
-        <div className="p-3 rounded-lg bg-[#050B14] border border-white/[0.06] hover:border-[#EF4444]/40 transition-colors">
+        <div className="min-w-[85%] sm:min-w-0 snap-start shrink-0 p-3 rounded-lg bg-[#050B14] border border-white/[0.06] hover:border-[#EF4444]/40 transition-colors">
           <div className="flex items-center justify-between mb-1">
             <span className="text-[10px] font-bold text-[#EF4444] px-1.5 py-0.2 rounded bg-[#EF4444]/10 border border-[#EF4444]/30">
               R-PHASE
@@ -64,7 +81,7 @@ export function GridMindPanel({ className }: GridMindPanelProps) {
         </div>
 
         {/* Phase Y */}
-        <div className="p-3 rounded-lg bg-[#050B14] border border-white/[0.06] hover:border-[#F59E0B]/40 transition-colors">
+        <div className="min-w-[85%] sm:min-w-0 snap-start shrink-0 p-3 rounded-lg bg-[#050B14] border border-white/[0.06] hover:border-[#F59E0B]/40 transition-colors">
           <div className="flex items-center justify-between mb-1">
             <span className="text-[10px] font-bold text-[#F59E0B] px-1.5 py-0.2 rounded bg-[#F59E0B]/10 border border-[#F59E0B]/30">
               Y-PHASE
@@ -81,7 +98,7 @@ export function GridMindPanel({ className }: GridMindPanelProps) {
         </div>
 
         {/* Phase B */}
-        <div className="p-3 rounded-lg bg-[#050B14] border border-white/[0.06] hover:border-[#00D2FF]/40 transition-colors">
+        <div className="min-w-[85%] sm:min-w-0 snap-start shrink-0 p-3 rounded-lg bg-[#050B14] border border-white/[0.06] hover:border-[#00D2FF]/40 transition-colors">
           <div className="flex items-center justify-between mb-1">
             <span className="text-[10px] font-bold text-[#00D2FF] px-1.5 py-0.2 rounded bg-[#00D2FF]/10 border border-[#00D2FF]/30">
               B-PHASE
@@ -99,7 +116,7 @@ export function GridMindPanel({ className }: GridMindPanelProps) {
       </div>
 
       {/* Aggregated System Indicators */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
+      <div className={cn("gap-2 mb-4", variant === "hero" ? "hidden sm:grid sm:grid-cols-4" : "grid grid-cols-2 sm:grid-cols-4")}>
         <div className="p-2.5 rounded bg-[#050B14]/90 border border-white/[0.04]">
           <div className="text-[10px] text-[#9EADC0] uppercase">True Power Factor</div>
           <div className="text-sm font-bold text-[#A6FF00] mt-0.5">0.985 Ind</div>
@@ -119,7 +136,7 @@ export function GridMindPanel({ className }: GridMindPanelProps) {
       </div>
 
       {/* Priority Load Management Strip */}
-      <div className="p-3 rounded-lg bg-[#050B14] border border-white/[0.06] mb-3">
+      <div className={cn("p-3 rounded-lg bg-[#050B14] border border-white/[0.06] mb-3", variant === "hero" ? "hidden lg:block" : "block")}>
         <div className="flex items-center justify-between text-[11px] mb-2">
           <span className="font-semibold text-[#F5F8FC] flex items-center gap-1.5">
             <ShieldCheck className="w-3.5 h-3.5 text-[#00D2FF]" />
@@ -150,7 +167,7 @@ export function GridMindPanel({ className }: GridMindPanelProps) {
           <Activity className="w-3.5 h-3.5" />
           <span>Sub-cycle Event Pre-Buffer: Armed</span>
         </div>
-        <div className="text-[9px] text-[#9EADC0]/60 italic">
+        <div className="text-[9px] text-[#9EADC0] italic">
           Demonstration engineering data
         </div>
       </div>

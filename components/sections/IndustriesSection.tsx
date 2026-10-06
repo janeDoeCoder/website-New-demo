@@ -58,8 +58,13 @@ export function IndustriesSection() {
               </div>
 
               <div className="pt-3 border-t border-white/[0.06] mt-auto">
-                <div className="text-[11px] font-mono text-[#00C8FF]/90 mb-2">
-                  Key Signal: {ind.keySignals[0]}
+                <div className="flex flex-col gap-1 mb-2">
+                  {ind.keySignals.slice(0, 2).map((signal, i) => (
+                    <div key={i} className="text-[11px] font-mono text-[#00C8FF]/90 flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-[#00C8FF]/60 shrink-0" />
+                      {signal}
+                    </div>
+                  ))}
                 </div>
                 <Link
                   href={`/industries#${ind.id}`}

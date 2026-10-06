@@ -7,9 +7,7 @@ import { PreventiveControl } from "@/components/sections/PreventiveControl";
 import { EdgeIntelligence } from "@/components/sections/EdgeIntelligence";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
 import { Comparison } from "@/components/sections/Comparison";
-import { PlatformFeatures } from "@/components/sections/PlatformFeatures";
 import { Brownfield } from "@/components/sections/Brownfield";
-import { CompanyMission } from "@/components/sections/CompanyMission";
 import { CTASection } from "@/components/sections/CTASection";
 
 export default function HomePage() {
@@ -18,10 +16,10 @@ export default function HomePage() {
       {/* 1. Hero */}
       <Hero />
 
-      {/* 2. More Than Electrical Monitoring */}
+      {/* 2. Operational Paradigm — 5-stage lifecycle + architecture flow */}
       <MonitoringFlow />
 
-      {/* 3. VANNIC GRiDMiND Overview */}
+      {/* 3. VANNIC GRiDMiND Platform Overview */}
       <PlatformOverview />
 
       {/* 4. Electrical Problems / Operational Risks */}
@@ -30,7 +28,7 @@ export default function HomePage() {
       {/* 5. Preventive Load Control */}
       <PreventiveControl />
 
-      {/* 6. Edge Intelligence */}
+      {/* 6. Edge Intelligence — hardware architecture */}
       <EdgeIntelligence />
 
       {/* 7. Target Industries */}
@@ -39,16 +37,10 @@ export default function HomePage() {
       {/* 8. VANNIC vs basic metering / complex automation */}
       <Comparison />
 
-      {/* 9. Platform Features */}
-      <PlatformFeatures />
-
-      {/* 10. Brownfield Infrastructure */}
+      {/* 9. Brownfield Infrastructure */}
       <Brownfield />
 
-      {/* 11. Company & Mission */}
-      <CompanyMission />
-
-      {/* 12. Final CTA */}
+      {/* 10. Final CTA */}
       <CTASection />
     </div>
   );

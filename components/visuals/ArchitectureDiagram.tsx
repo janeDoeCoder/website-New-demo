@@ -18,7 +18,7 @@ export function ArchitectureDiagram({ className }: ArchitectureDiagramProps) {
       detail: "Three-phase incoming feeders, transformers, distribution panels, and inductive motor loads.",
       icon: <Zap className="w-5 h-5 text-[#0052FF]" />,
       accentColor: "border-[#0052FF]/30 bg-[#0052FF]/5 hover:border-[#0052FF]/60",
-      badgeColor: "text-[#0052FF] border-[#0052FF]/30 bg-[#0052FF]/10",
+      badgeColor: "text-[#60A5FA] border-[#60A5FA]/30 bg-[#60A5FA]/10",
       signalText: "Raw 3-Phase AC Feed",
     },
     {

@@ -24,13 +24,16 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full transition-all duration-300 py-3 sm:py-4 px-4 sm:px-6 lg:px-8">
+    <header className={cn(
+      "sticky top-0 z-50 w-full transition-all duration-300 px-3 sm:px-6 lg:px-8",
+      scrolled ? "py-1.5 sm:py-3" : "py-3 sm:py-4"
+    )}>
       <div
         className={cn(
-          "max-w-7xl mx-auto rounded-2xl transition-all duration-300 px-4 sm:px-6 py-2.5 sm:py-3",
+          "max-w-7xl mx-auto rounded-2xl transition-all duration-300 px-4 sm:px-6",
           scrolled
-            ? "bg-[#020408]/90 backdrop-blur-xl border border-white/[0.12] shadow-[0_8px_32px_rgba(0,0,0,0.8)]"
-            : "bg-[#040810]/75 backdrop-blur-md border border-white/[0.08]"
+            ? "py-1.5 sm:py-2.5 bg-[#020408]/90 backdrop-blur-xl border border-white/[0.12] shadow-[0_8px_32px_rgba(0,0,0,0.8)]"
+            : "py-2.5 sm:py-3 bg-[#040810]/75 backdrop-blur-md border border-white/[0.08]"
         )}
       >
         <div className="flex items-center justify-between">
@@ -81,7 +84,7 @@ export function Navbar() {
                 >
                   {item.label}
                   {isActive && (
-                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#A6FF00]" />
+                    <span className="absolute -bottom-[3px] left-1/2 -translate-x-1/2 w-3 h-[2px] rounded-full bg-[#A6FF00]" />
                   )}
                 </Link>
               );

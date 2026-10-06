@@ -1,10 +1,17 @@
 import React from "react";
 import { SectionHeading } from "@/ui/SectionHeading";
 import { BROWNFIELD_PILLARS } from "@/content/features";
-import { Wrench, ShieldCheck } from "lucide-react";
+import { SplitSquareHorizontal, Plug, ToggleLeft, Server, ShieldCheck } from "lucide-react";
 import { Button } from "@/ui/Button";
 
 export function Brownfield() {
+  const pillarIcons = [
+    <SplitSquareHorizontal key="0" className="w-4 h-4" />,
+    <Plug key="1" className="w-4 h-4" />,
+    <ToggleLeft key="2" className="w-4 h-4" />,
+    <Server key="3" className="w-4 h-4" />,
+  ];
+
   return (
     <section id="brownfield" className="py-20 sm:py-28 bg-[#040C15] border-t border-white/[0.06] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,7 +23,7 @@ export function Brownfield() {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {BROWNFIELD_PILLARS.map((pillar) => (
+          {BROWNFIELD_PILLARS.map((pillar, idx) => (
             <div
               key={pillar.step}
               className="p-6 rounded-xl bg-[#061321] border border-white/[0.08] hover:border-[#1677FF]/40 transition-all flex flex-col justify-between"
@@ -27,7 +34,7 @@ export function Brownfield() {
                     {pillar.step}
                   </span>
                   <div className="w-8 h-8 rounded-lg bg-[#0A1D2E] border border-white/10 flex items-center justify-center text-[#1677FF]">
-                    <Wrench className="w-4 h-4" />
+                    {pillarIcons[idx]}
                   </div>
                 </div>
                 <h3 className="text-base font-bold text-[#F5F8FC] mb-2">{pillar.title}</h3>
