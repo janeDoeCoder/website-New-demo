@@ -123,6 +123,7 @@ function Loader({
       u_scale: scale,
       u_pxSize: 2, // Pixel size for dithering
     }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [color, colorBack, shapeValue, scale, cssVariableEpoch],
   );
 

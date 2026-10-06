@@ -35,7 +35,7 @@ export default function GlobalErrorPage({
             Something Went Wrong
           </h1>
           <p className="text-sm text-[#9EADC0] leading-relaxed">
-            An unexpected error occurred while processing this interface. Our technical operations team has logged the event.
+            An unexpected error occurred while processing this interface. Please try refreshing the page or navigating back home.
           </p>
           {error.digest && (
             <p className="text-xs font-mono text-white/30 pt-1">

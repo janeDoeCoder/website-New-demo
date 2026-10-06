@@ -21,7 +21,7 @@ export interface ValidationResult<T> {
   errors?: ValidationErrorDetail[];
 }
 
-export type ValidatorFn<T> = (value: unknown, field: string) => ValidationErrorDetail | null;
+export type ValidatorFn = (value: unknown, field: string) => ValidationErrorDetail | null;
 
 /**
  * Common security regex patterns
@@ -30,11 +30,11 @@ export const SECURITY_PATTERNS = {
   // RFC 5322 compliant email regex rejecting control chars, nested quotes, and leading/trailing dots
   EMAIL: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/,
   
-  // Safe human names: alphabets, spaces, apostrophes, hyphens, dots. No HTML tags or scripts.
-  PERSON_NAME: /^[a-zA-Z\u00C0-\u024F\u1E00-\u1EFF\s.'\-]+$/,
+  // Safe human names: alphabets, spaces, apostrophes, hyphens, dots. Supports all Unicode letters/marks.
+  PERSON_NAME: /^[\p{L}\p{M}\s.'\-]+$/u,
   
   // Company names: alphanumeric plus common business punctuation
-  COMPANY_NAME: /^[a-zA-Z0-9\u00C0-\u024F\u1E00-\u1EFF\s.,&'()/\-]+$/,
+  COMPANY_NAME: /^[\p{L}\p{N}\p{M}\s.,&'()/\-]+$/u,
   
   // International phone numbers (E.164 format and common grouped formats)
   PHONE: /^\+?[0-9\s().-]{7,25}$/,

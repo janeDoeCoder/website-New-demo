@@ -28,8 +28,10 @@ export function ShaderMount({
   const uniformsRef = React.useRef(uniforms);
   const speedRef = React.useRef(speed);
 
-  uniformsRef.current = uniforms;
-  speedRef.current = speed;
+  React.useEffect(() => {
+    uniformsRef.current = uniforms;
+    speedRef.current = speed;
+  }, [uniforms, speed]);
 
   React.useEffect(() => {
     const canvas = canvasRef.current;
@@ -101,7 +103,7 @@ export function ShaderMount({
     const resLocation = gl.getUniformLocation(program, "u_resolution");
 
     let animationFrameId: number;
-    let startTime = performance.now();
+    const startTime = performance.now();
 
     const render = (now: number) => {
       const elapsedTime = ((now - startTime) / 1000) * speedRef.current;
@@ -149,8 +151,12 @@ export function ShaderMount({
     };
   }, [fragmentShader, width, height]);
 
-  // Adjust for high-DPI displays
-  const dpr = typeof window !== "undefined" ? Math.min(window.devicePixelRatio || 1, 2) : 1;
+  // Adjust for high-DPI displays after mount to prevent hydration mismatch
+  const [dpr, setDpr] = React.useState(1);
+  React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setDpr(Math.min(window.devicePixelRatio || 1, 2));
+  }, []);
 
   return (
     <canvas

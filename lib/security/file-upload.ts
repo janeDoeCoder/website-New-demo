@@ -102,7 +102,7 @@ export function containsScriptPayload(buffer: Uint8Array): boolean {
     /onload\s*=/i,
     /onerror\s*=/i,
     /eval\s*\(/i,
-    /<?php/i,
+    /<\?php/i,
   ];
 
   return dangerousPatterns.some((pattern) => pattern.test(text));

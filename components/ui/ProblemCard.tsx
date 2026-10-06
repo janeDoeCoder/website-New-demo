@@ -48,7 +48,7 @@ export function ProblemCard({
           <AlertTriangle className="w-4 h-4 text-[#F59E0B] shrink-0 mt-0.5" />
           <p>
             <strong className="text-white/80 font-medium">Risk:</strong> {symptom}{" "}
-            <span className="text-[#EF4444]/90 block mt-1">{consequence}</span>
+            <span className="text-[#FCA5A5] block mt-1">{consequence}</span>
           </p>
         </div>
       </div>

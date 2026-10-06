@@ -66,9 +66,9 @@ export function Comparison() {
               key={row.dimension}
               className="p-5 rounded-xl bg-[#061321] border border-white/[0.08] space-y-3"
             >
-              <h4 className="text-base font-bold text-[#F5F8FC] border-b border-white/[0.06] pb-2">
+              <h3 className="text-base font-bold text-[#F5F8FC] border-b border-white/[0.06] pb-2">
                 {row.dimension}
-              </h4>
+              </h3>
               <div className="space-y-2 text-xs">
                 <div>
                   <span className="font-mono text-[#9EADC0] uppercase text-[10px] block">

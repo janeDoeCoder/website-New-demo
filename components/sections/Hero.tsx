@@ -134,7 +134,7 @@ export function Hero() {
                 colorTo="#00D2FF"
                 borderWidth={1.5}
               />
-              <GridMindPanel className="w-full" />
+              <GridMindPanel variant="hero" className="w-full" />
             </div>
 
             {/* Edge Controller — Compact Status Strip */}

@@ -63,6 +63,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: `${BRAND.brandName} — ${BRAND.tagline}`,
+    description:
+      "Intelligent electrical monitoring, edge risk detection, and preventive supervisory control for commercial and industrial infrastructure.",
+    images: ["/brand/og-cover.png"],
+  },
   robots: {
     index: true,
     follow: true,

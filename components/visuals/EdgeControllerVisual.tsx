@@ -80,7 +80,7 @@ export function EdgeControllerVisual({ className }: EdgeControllerVisualProps) {
               <span className="text-[#F5F8FC]">41.8°C [Safe]</span>
             </div>
           </div>
-          <div className="mt-2 text-[9px] text-[#9EADC0]/70 uppercase tracking-wider">
+          <div className="mt-2 text-[9px] text-[#9EADC0] uppercase tracking-wider">
             Sub-Cycle Ingestion
           </div>
         </div>
@@ -130,7 +130,7 @@ export function EdgeControllerVisual({ className }: EdgeControllerVisualProps) {
               <span className="text-[#A6FF00] font-bold">Guarded</span>
             </div>
           </div>
-          <div className="mt-2 text-[9px] text-[#9EADC0]/70 uppercase tracking-wider">
+          <div className="mt-2 text-[9px] text-[#9EADC0] uppercase tracking-wider">
             Approved Non-Critical Only
           </div>
         </div>

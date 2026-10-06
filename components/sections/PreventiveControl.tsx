@@ -56,8 +56,8 @@ export function PreventiveControl() {
               </h3>
             </div>
             <div className="flex items-center gap-2 text-xs font-mono text-[#A6FF00] bg-[#A6FF00]/10 border border-[#A6FF00]/20 px-3 py-1.5 rounded-full w-fit">
-              <span className="w-2 h-2 rounded-full bg-[#A6FF00] animate-pulse" />
-              <span>Edge Anomaly Interlock Active</span>
+              <ShieldAlert className="w-3.5 h-3.5" />
+              <span>Edge Architecture Example</span>
             </div>
           </div>
 

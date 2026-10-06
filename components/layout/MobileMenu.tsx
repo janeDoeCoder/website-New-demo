@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
@@ -39,9 +40,10 @@ export function MobileMenu() {
       </button>
 
       {/* Mobile Drawer Overlay */}
-      {isOpen && (
+      {isOpen && typeof document !== "undefined" && createPortal(
         <div
-          className="fixed inset-0 top-[65px] bg-[#061321]/95 backdrop-blur-xl z-50 flex flex-col p-6 overflow-y-auto border-t border-white/[0.08] animate-in fade-in duration-200"
+          className="fixed inset-0 top-[65px] bg-[#061321]/95 backdrop-blur-xl z-[99] flex flex-col p-6 overflow-y-auto border-t border-white/[0.08] animate-in fade-in duration-200"
+          id="mobile-navigation-drawer"
         >
           <nav className="flex flex-col gap-2 my-auto">
             {MAIN_NAVIGATION.map((item) => {
@@ -81,7 +83,8 @@ export function MobileMenu() {
               </span>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

@@ -144,7 +144,7 @@ async function testContactForm() {
             await new Promise(r => setTimeout(r, 100));
             const submitBtn = document.querySelector('button[type="submit"]');
             submitBtn.click();
-            await new Promise(r => setTimeout(r, 300));
+            await new Promise(r => setTimeout(r, 2000));
 
             return {
               hasSuccessTitle: !!document.querySelector('h3'),

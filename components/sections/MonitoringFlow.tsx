@@ -67,7 +67,7 @@ export function MonitoringFlow() {
                       {step.badge}
                     </span>
                   </div>
-                  <h4 className="text-base font-bold text-[#F5F8FC] mb-2">{step.title}</h4>
+                  <h3 className="text-base font-bold text-[#F5F8FC] mb-2">{step.title}</h3>
                   <p className="text-xs text-[#9EADC0] leading-relaxed">
                     {step.description}
                   </p>

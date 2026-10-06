@@ -209,9 +209,9 @@ export function ModernFooter() {
           <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
             {/* Column 1: Platform */}
             <div className="space-y-3.5">
-              <h4 className="text-xs font-mono uppercase tracking-[0.18em] text-[#EDEDEF] font-semibold flex items-center gap-1.5">
+              <h3 className="text-xs font-mono uppercase tracking-[0.18em] text-[#EDEDEF] font-semibold flex items-center gap-1.5">
                 <Cpu className="w-3 h-3 text-[#00D2FF]" /> Platform
-              </h4>
+              </h3>
               <ul className="space-y-2.5 text-xs sm:text-sm">
                 {FOOTER_NAVIGATION.platform.map((item) => (
                   <li key={item.label}>
@@ -229,9 +229,9 @@ export function ModernFooter() {
 
             {/* Column 2: Industries */}
             <div className="space-y-3.5">
-              <h4 className="text-xs font-mono uppercase tracking-[0.18em] text-[#EDEDEF] font-semibold flex items-center gap-1.5">
+              <h3 className="text-xs font-mono uppercase tracking-[0.18em] text-[#EDEDEF] font-semibold flex items-center gap-1.5">
                 <Activity className="w-3 h-3 text-[#0052FF]" /> Industries
-              </h4>
+              </h3>
               <ul className="space-y-2.5 text-xs sm:text-sm">
                 {FOOTER_NAVIGATION.industries.map((item) => (
                   <li key={item.label}>
@@ -249,9 +249,9 @@ export function ModernFooter() {
 
             {/* Column 3: Company */}
             <div className="space-y-3.5">
-              <h4 className="text-xs font-mono uppercase tracking-[0.18em] text-[#EDEDEF] font-semibold">
+              <h3 className="text-xs font-mono uppercase tracking-[0.18em] text-[#EDEDEF] font-semibold">
                 Company
-              </h4>
+              </h3>
               <ul className="space-y-2.5 text-xs sm:text-sm">
                 {FOOTER_NAVIGATION.company.map((item) => (
                   <li key={item.label}>
@@ -269,9 +269,9 @@ export function ModernFooter() {
 
             {/* Column 4: Legal & Standards */}
             <div className="space-y-3.5">
-              <h4 className="text-xs font-mono uppercase tracking-[0.18em] text-[#EDEDEF] font-semibold">
+              <h3 className="text-xs font-mono uppercase tracking-[0.18em] text-[#EDEDEF] font-semibold">
                 Compliance
-              </h4>
+              </h3>
               <ul className="space-y-2.5 text-xs sm:text-sm">
                 {FOOTER_NAVIGATION.legal.map((item) => (
                   <li key={item.label}>

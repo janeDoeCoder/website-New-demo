@@ -63,11 +63,37 @@ export async function POST(req: NextRequest) {
     const validData = validation.data;
 
     // 4. Server-side processing
-    // In production, save to database / queue notification via secure environment credentials
-    // Note: Log contact inquiry server-side without leaking credentials or PII to external sinks
     console.info(`[CONTACT_INQUIRY_RECEIVED] Facility: ${validData.company}, Industry: ${validData.industry}`);
 
-    // 5. Successful Generic Response
+    // 5. Forward inquiry to Google Forms → auto-records in linked Google Sheet
+    const { submitToGoogleForm } = await import("@/adapters/google-forms");
+    const formsResult = await submitToGoogleForm({
+      fullName:     validData.fullName,
+      company:      validData.company,
+      email:        validData.email,
+      phone:        validData.phone,
+      industry:     validData.industry,
+      facilityType: validData.facilityType,
+      message:      validData.message,
+    });
+
+    if (!formsResult.success) {
+      console.error(`[GoogleForms] Submission failed: ${formsResult.error}`);
+      return NextResponse.json(
+        {
+          success: false,
+          error: {
+            message: "Our systems are currently unable to process your request. Please try again later or contact us directly.",
+            code: "UPSTREAM_ERROR"
+          }
+        },
+        { status: 502 }
+      );
+    } else if (formsResult.skipped) {
+      console.warn("[GoogleForms] Skipped — GOOGLE_FORM_ID env var not configured.");
+    }
+
+    // 6. Successful Generic Response
     return NextResponse.json(
       {
         success: true,
